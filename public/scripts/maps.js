@@ -646,7 +646,7 @@ function renderGateway (x, y, gateway, gatewayBeacons) {
       .attr('data-html', true)
       .attr('data-content', `<div class="row"><div class="col-md-12 text-center"><strong>MAC Address:</strong> ${gateway.gateway_id}</div></div>
         <div style="margin-top: 2px" class="row"><div class="col-md-6 text-center"><strong>x</strong>: ${Number((gateway.x).toFixed(2))}</div><div class="col-md-6 text-center"><strong>y:</strong> ${Number((gateway.y).toFixed(2))}</div></div>
-        <div class="row"><div class="col-md-12 text-center"><strong>Battery Level:</strong> ${Number(((gateway.charged/4.12)*100).toFixed(2))}%</div></div>
+        <div class="row"><div class="col-md-12 text-center"><strong>Battery Level:</strong> ${gateway.charged ? gateway.charged.toFixed(2) : 'Not availaible'}</div></div>
         <div class="row"><div class="col-md-12 text-center"><strong>Last seen:</strong> ${moment(gateway.lastseen).format('MMMM Do YYYY, h:mm:ss a')}</div></div>
         <div class="col-md-12 text-center"><strong>Associated Beacons:</strong></div>
         <div>
